@@ -11,7 +11,7 @@ export default function Article({article}) {
         <div>
           <Card.Title >
             {article.title} 
-  <span className="text-muted font-weight-light"> By {article.author}</span>
+  {/* <span className="text-muted font-weight-light"> By {article.author}</span> */}
             </Card.Title>
             <Card.Subtitle className="text-muted mb-2">
             {new Date(article.publishedAt).toLocaleString()}
