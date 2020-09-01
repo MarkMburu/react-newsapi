@@ -27,8 +27,12 @@ export default function useFetchNews(params,page){
     dispatch({ type: ACTIONS.MAKE_REQUEST })
     axios.get(BASE_URL,{
       cancelToken: cancelToken.token,
-      params:{markdown: true,page:page,...params}
-    }).then((res)=>{
+      params:{markdown: true,page:page,...params},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      }
+    },).then((res)=>{
   
       console.log(res.data)
       dispatch({ type: ACTIONS.GETDATA,payload:{news:res.data.articles}})
