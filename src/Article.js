@@ -7,7 +7,7 @@ export default function Article({article}) {
     <Card className="card">
       <Card.Body className="cardBody">
       <div className="d-flex justify-content-between">
-      <img className="d-none d-md-block" width="50%" src={article.urlToImage}/>
+      <img className="d-none d-md-block" width="50%" alt="" src={article.urlToImage}/>
         <div>
           <Card.Title >
             {article.title} 
