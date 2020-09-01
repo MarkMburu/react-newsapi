@@ -25,16 +25,10 @@ export default function useFetchNews(params,page){
   useEffect(()=> {
     const cancelToken = axios.CancelToken.source()
     dispatch({ type: ACTIONS.MAKE_REQUEST })
-    axios.get(BASE_URL,{
+    axios(BASE_URL,{
       cancelToken: cancelToken.token,
       mode: 'no-cors',
       params:{markdown: true,page:page,...params},
-      // headers: {
-      //   'Access-Control-Allow-Origin': '*',
-      //   'Content-Type': 'application/json',
-      // },
-      // withCredentials: true,
-      // credentials: 'same-origin'
     },).then((res)=>{
   
       console.log(res.data)
