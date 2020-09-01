@@ -6,7 +6,7 @@ const ACTIONS ={
   GETDATA: 'get-data',
   ERROR: 'error'
 }
-const BASE_URL = "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=107794bbfbf144c1aa5113b45bb373b5"
+const BASE_URL = "https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apiKey=107794bbfbf144c1aa5113b45bb373b5"
 const reducer=(state,action)=>{
   switch(action.type){
     case ACTIONS.MAKE_REQUEST:
@@ -27,7 +27,7 @@ export default function useFetchNews(params,page){
     dispatch({ type: ACTIONS.MAKE_REQUEST })
     axios.get(BASE_URL,{
       cancelToken: cancelToken.token,
-      params:{page:page,...params}
+      params:{markdown: true,page:page,...params}
     }).then((res)=>{
   
       console.log(res.data)
